@@ -9,6 +9,9 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+
+      <TestComponent/>
+      <CalcComponent/>
     </div>
   </header>
 
@@ -18,6 +21,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import TestComponent from './components/TestComponent.vue'
+import CalcComponent from './components/CalcComponent.vue'
 </script>
 
 
