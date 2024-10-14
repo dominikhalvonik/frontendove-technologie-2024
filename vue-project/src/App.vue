@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import TestComponent from './components/TestComponent.vue'
+import CalcComponent from './components/CalcComponent.vue'
 </script>
 
 <template>
@@ -17,6 +18,7 @@ import TestComponent from './components/TestComponent.vue'
       </nav>
 
       <TestComponent/>
+      <CalcComponent/>
     </div>
   </header>
 
