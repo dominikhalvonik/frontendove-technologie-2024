@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+import TestComponent from './components/TestComponent.vue'
+import CalcComponent from './components/CalcComponent.vue'
+import NewComponent from './components/NewComponent.vue'
+</script>
+
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
@@ -16,14 +24,11 @@
   </header>
 
   <RouterView />
+
+  <NewComponent/>
 </template>
 
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import TestComponent from './components/TestComponent.vue'
-import CalcComponent from './components/CalcComponent.vue'
-</script>
+
 
 
 <style scoped>
