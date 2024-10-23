@@ -20,7 +20,34 @@ export default defineComponent({
     vlozitDoZoznamu() {
       this.zoznamMien.push({id: 12, meno: "Test", vek: 14})
     }
-  }
+  },
+  beforeCreate() {
+    console.log("Toto sa vykona pred vytvorenim komponentu")
+  },
+  created() {
+    console.log("Toto sa vykona po vytvorenim komponentu")
+    for (let i = 0; i < 50000; i++) {
+      console.log(i)
+    }
+  },
+  beforeMount() {
+    console.log("Toto sa vykona pred vlozenim komponentu do HTML")
+  },
+  mounted() {
+    console.log("Toto sa vykona po vlozenim komponentu do HTML")
+  },
+  beforeUpdate() {
+    console.log("Toto sa vykona pred aktualizaciou komponentu")
+  },
+  updated() {
+    console.log("Toto sa vykona po aktualizaciou komponentu")
+  },
+  beforeUnmount() {
+    console.log("Toto sa vykona pred vyradenim komponentu")
+  },
+  unmounted() {
+    console.log("Toto sa vykona po vyradenim komponentu")
+  },
 })
 </script>
 
