@@ -1,13 +1,17 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
+import NewComponent from './NewComponent.vue'
 
 export default defineComponent({
-name: "TestComponent",
+  name: 'TestComponent',
+  components: {
+    NewComponent
+  },
   data() {
     return {
       cislo: 1,
-      meno: "Dominik",
-      priezvisko: "Martak"
+      meno: 'Dominik',
+      priezvisko: 'Martak'
     }
   },
   methods: {
@@ -20,14 +24,14 @@ name: "TestComponent",
   },
   computed: {
     getColor() {
-      if(this.cislo < 5) {
-        return "green"
+      if (this.cislo < 5) {
+        return 'green'
       } else {
-        return "blue"
+        return 'blue'
       }
     },
     getFullName() {
-      return this.meno + " " + this.priezvisko
+      return this.meno + ' ' + this.priezvisko
     }
   }
 })
@@ -42,6 +46,7 @@ name: "TestComponent",
     <button @click="increment">Pridaj</button>
     <button @click="decrement">Uber</button>
   </div>
+  <NewComponent v-if="cislo < 5" />
 </template>
 
 <style scoped>
@@ -55,4 +60,3 @@ name: "TestComponent",
   font-size: 50px;
 }
 </style>
-
