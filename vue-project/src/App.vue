@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import TestComponent from './components/TestComponent.vue'
 import CalcComponent from './components/CalcComponent.vue'
-import NewComponent from './components/NewComponent.vue'
 </script>
 
 <template>
@@ -24,8 +23,6 @@ import NewComponent from './components/NewComponent.vue'
   </header>
 
   <RouterView />
-
-  <NewComponent/>
 </template>
 
 

@@ -1,8 +1,12 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
+import NewComponent from './NewComponent.vue'
 
 export default defineComponent({
   name: "TestComponent",
+  components: {
+    NewComponent
+  },
   data() {
     return {
       cislo: 1,
@@ -46,6 +50,8 @@ export default defineComponent({
   <button @click="increment">Pridaj</button>
   <button @click="decrement">Uber</button>
 </div>
+
+  <NewComponent v-if="cislo < 5"/>
 </template>
 
 <style scoped>
