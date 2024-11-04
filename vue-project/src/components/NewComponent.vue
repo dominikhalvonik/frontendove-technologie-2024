@@ -25,6 +25,12 @@ export default defineComponent({
       ]
     }
   },
+  props: {
+    parentMessage: {
+      type: String,
+      required: true
+    }
+  },
   methods: {
     toggle() {
       this.somTu = !this.somTu
@@ -34,6 +40,9 @@ export default defineComponent({
     },
     removeUser() {
       this.zoznamMien.pop()
+    },
+    sendDataToParent() {
+      this.$emit('childEvent', 'fdsafdsfdsa');
     }
   },
   beforeCreate() {
@@ -65,7 +74,9 @@ export default defineComponent({
 
 <template>
 <div>
+  <p>{{ parentMessage }}</p>
   <button @click="toggle">Toogle</button>
+  <button @click="sendDataToParent">Posli data do parent komponentu</button>
   <p v-if="somTu">Ahoj vidis ma lebo somTu je true</p>
   <p v-else>Ahoj nevidis ma lebo somTu je false</p>
   <p v-show="somTu">Ahoj vidis ma lebo somTu je true</p>
