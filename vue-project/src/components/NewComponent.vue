@@ -10,6 +10,12 @@ export default defineComponent({
       zoznamMien: [{id: 1, meno: "Dominik", vek: 22}, { id: 2, meno: "Peter", vek: 23 }]
     }
   },
+  props: {
+    parentMessage: {
+      type: String,
+      required: true
+    }
+  },
   methods: {
     toggle() {
       this.somTu = !this.somTu
@@ -19,6 +25,10 @@ export default defineComponent({
     },
     vlozitDoZoznamu() {
       this.zoznamMien.push({id: 12, meno: "Test", vek: 14})
+    },
+    sendToParent()
+    {
+      this.$emit('childEventtttt', 'Toto je sprava z podradeneho komponentu')
     }
   },
   beforeCreate() {
@@ -26,9 +36,6 @@ export default defineComponent({
   },
   created() {
     console.log("Toto sa vykona po vytvorenim komponentu")
-    for (let i = 0; i < 50000; i++) {
-      console.log(i)
-    }
   },
   beforeMount() {
     console.log("Toto sa vykona pred vlozenim komponentu do HTML")
@@ -53,6 +60,8 @@ export default defineComponent({
 
 <template>
 <div>
+  <button @click="sendToParent">Odosli spravu do rodica</button>
+  <p style="color: red">{{ parentMessage }}</p>
   <p v-if="cislo < 5">Teraz ma vidis</p>
   <p v-else-if="cislo > 5 && cislo < 10">Nieco v strede</p>
   <p v-else>Teraz ma nevidis</p>
