@@ -23,12 +23,21 @@ export default defineComponent({
       ]
     }
   },
+  props: {
+    parentMessage: {
+      type: String,
+      required: true
+    }
+  },
   methods: {
     vlozDoZoznamu() {
       this.zoznamMien.push({ id: 14, meno: 'Peter', priezvisko: 'Plavcan', vek: 48 })
     },
     toggle() {
       this.somTu = !this.somTu
+    },
+    sendMessageToParent() {
+      this.$emit('childEvent', 'Toto je sprava od Luka')
     }
   },
   beforeCreate() {
@@ -62,6 +71,7 @@ export default defineComponent({
 </script>
 
 <template>
+  <p>{{ parentMessage }}</p>
   <p v-if="somTu">{{ sprava }}</p>
   <p v-else>Nic tu nie je a ani nebude</p>
 
@@ -72,6 +82,7 @@ export default defineComponent({
   <ul>
     <li v-for="item in zoznamMien" :key="item.id">{{ item.meno }} {{ item.priezvisko }}</li>
   </ul>
+  <button @click="sendMessageToParent">Posli spravum rodicovi</button>
 </template>
 
 <style scoped></style>
