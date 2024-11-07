@@ -11,21 +11,15 @@ export default defineComponent({
     return {
       cislo: 1,
       meno: "Dominik",
-      priezvisko: "Ponist"
-    }
-  },
-  methods: {
-    increment() {
-      this.cislo++
-    },
-    decrement() {
-      this.cislo--
+      priezvisko: "Ponist",
+      menoPouzivatela: "Maria",
+      childMessage: 'Nic'
     }
   },
   computed: {
     changeColor() {
       if(this.cislo < 5) {
-         return "green"
+        return "green"
       } else if(this.cislo === 15) {
         return "black"
       }
@@ -37,12 +31,28 @@ export default defineComponent({
     {
       return this.meno + " " + this.priezvisko
     }
+  },
+  methods: {
+    increment() {
+      this.cislo++
+    },
+    decrement() {
+      this.cislo--
+    },
+    handleChildEvent(message: any) {
+      this.childMessage = message
+    }
+  },
+  mounted() {
+      //UROB API CALL NA BE a NAPL parentSprava ODPOVEDOU menoPouzivatela = fetch('http://moj-backend.com/api/user/get-name')
   }
 })
 </script>
 
 <template>
 <div>
+  <p>Vitaj {{ menoPouzivatela }}</p>
+  <p>Toto je sprava od podradeneho komponentu: {{ childMessage }}</p>
   <p>Ahoj toto je moj prvy komponent</p>
   <p>{{ meno }} {{ priezvisko }}</p>
   <p>{{ cislo }}</p>
@@ -51,7 +61,7 @@ export default defineComponent({
   <button @click="decrement">Uber</button>
 </div>
 
-  <NewComponent v-if="cislo < 5"/>
+  <NewComponent v-if="cislo < 5" :username="menoPouzivatela" @childEvent="handleChildEvent"/>
 </template>
 
 <style scoped>

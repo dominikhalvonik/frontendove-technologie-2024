@@ -20,12 +20,10 @@ export default defineComponent({
       ]
     }
   },
-  methods: {
-    toggle() {
-      this.somTum = !this.somTum
-    },
-    addToList() {
-      this.zoznamLudi.push({id: 15, meno: "Martin Madej", vek: 15})
+  props: {
+    username: {
+      type: String,
+      required: true
     }
   },
   beforeCreate() {
@@ -33,15 +31,13 @@ export default defineComponent({
   },
   created() {
     console.log("Toto sa vykoná po vytvorením komponentu")
-    for(let i = 0; i < 50000; i++) {
-      console.log(i)
-    }
   },
   beforeMount() {
     console.log("Toto sa vykoná pred zaradením komponentu do HTML")
   },
   mounted() {
     console.log("Toto sa vykoná po zaradením komponentu do HTML")
+    //API CALL NA BE
   },
   beforeUpdate() {
     console.log("Toto sa vykoná pred aktualizaciou")
@@ -55,11 +51,24 @@ export default defineComponent({
   unmounted() {
     console.log("Toto sa vykoná po vyradením komponentu")
   },
+  methods: {
+    toggle() {
+      this.somTum = !this.somTum
+    },
+    addToList() {
+      this.zoznamLudi.push({id: 15, meno: "Martin Madej", vek: 15})
+    },
+    sendDataToParent() {
+      this.$emit('childEvent', 'Ahoj ako sa mas')
+    },
+  },
 })
 </script>
 
 <template>
 <div>
+  <button @click="sendDataToParent">Odosli spravu do nadradeneho komponentu</button>
+  <p>Teraz si prihlaseny ako: {{ username }}</p>
   <p v-if="somTum">Som tu</p>
   <p v-else>Nie som tu</p>
   <p v-show="somTum">Aj tak som tu</p>
