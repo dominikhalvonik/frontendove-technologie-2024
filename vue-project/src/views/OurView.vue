@@ -1,0 +1,32 @@
+<script lang="ts">
+import {defineComponent} from 'vue'
+import CalcComponent from "@/components/CalcComponent.vue";
+import TestComponent from "@/components/TestComponent.vue";
+
+export default defineComponent({
+  name: "OurView",
+  components: {
+    CalcComponent,
+    TestComponent
+  },
+  data() {
+    return {
+      username: "Peter"
+    }
+  },
+})
+</script>
+
+<template>
+
+  <div>
+    <RouterLink :to="'/a-component/' + username">Component A</RouterLink>
+    <RouterLink :to="'/b-component/' + username">Component B</RouterLink>
+    <CalcComponent/>
+    <TestComponent/>
+  </div>
+</template>
+
+<style scoped>
+
+</style>

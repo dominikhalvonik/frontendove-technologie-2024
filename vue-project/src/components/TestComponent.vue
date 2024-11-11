@@ -27,6 +27,11 @@ export default defineComponent({
       this.childMessage = message
     }
   },
+  watch: {
+    childMessage(newValue, oldValue) {
+      console.log('Povodna hodnota bola ' + oldValue + ' a nova hodnota je ' + newValue)
+    }
+  },
   computed: {
     getColor() {
       if(this.cislo < 5) {

@@ -42,7 +42,7 @@ export default defineComponent({
       this.zoznamMien.pop()
     },
     sendDataToParent() {
-      this.$emit('childEvent', 'fdsafdsfdsa');
+      this.$emit('childEvent', 'Nahodna hodnota: ' + Math.random());
     }
   },
   beforeCreate() {
