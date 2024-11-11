@@ -16,6 +16,11 @@ export default defineComponent({
       childMessage: 'Nic'
     }
   },
+  watch: {
+    childMessage(novaHodnota, staraHondota) {
+      console.log('Povodna hodnota bola ' + staraHondota + ' a nova hodnota je ' + novaHodnota)
+    }
+  },
   methods: {
     increment() {
       this.cislo++
