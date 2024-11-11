@@ -2,13 +2,10 @@
 import {defineComponent} from 'vue'
 import TestComponent from "@/components/TestComponent.vue";
 import CalcComponent from "@/components/CalcComponent.vue";
-import {RouterLink, RouterView} from "vue-router";
 
 export default defineComponent({
   name: "OurView",
   components: {
-    RouterView,
-    RouterLink,
     TestComponent,
     CalcComponent
   },
