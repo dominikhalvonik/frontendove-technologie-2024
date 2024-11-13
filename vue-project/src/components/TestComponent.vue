@@ -16,6 +16,13 @@ export default defineComponent({
       childMessage: 'Nic'
     }
   },
+  watch: {
+    childMessage(newValue, oldValue) {
+      console.log('Povodna hodnota bola '
+          + oldValue + ' a nova hodnota je '
+          + newValue)
+    }
+  },
   methods: {
     increment() {
       this.cislo++

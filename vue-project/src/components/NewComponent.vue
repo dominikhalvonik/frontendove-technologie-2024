@@ -37,7 +37,7 @@ export default defineComponent({
       this.somTu = !this.somTu
     },
     sendMessageToParent() {
-      this.$emit('childEvent', 'Toto je sprava od Luka')
+      this.$emit('childEvent', 'Toto je sprava od Luka: ' + Math.random())
     }
   },
   beforeCreate() {
@@ -45,9 +45,6 @@ export default defineComponent({
   },
   created() {
     console.log('Toto sa stane po vytvorenim komponentu')
-    for (let i = 0; i < 50000; i++) {
-      console.log(i)
-    }
   },
   beforeMount() {
     console.log('Toto sa stane pred vlozenim komponentu do HTML')
