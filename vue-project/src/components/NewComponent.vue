@@ -28,7 +28,7 @@ export default defineComponent({
     },
     sendToParent()
     {
-      this.$emit('childEventtttt', 'Toto je sprava z podradeneho komponentu')
+      this.$emit('childEventtttt', 'Toto je sprava z podradeneho komponentu ' + Math.random())
     }
   },
   beforeCreate() {
