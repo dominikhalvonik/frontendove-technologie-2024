@@ -59,7 +59,7 @@ export default defineComponent({
       this.zoznamLudi.push({id: 15, meno: "Martin Madej", vek: 15})
     },
     sendDataToParent() {
-      this.$emit('childEvent', 'Ahoj ako sa mas')
+      this.$emit('childEvent', 'Toto je nahodne cislo: ' + Math.random())
     },
   },
 })

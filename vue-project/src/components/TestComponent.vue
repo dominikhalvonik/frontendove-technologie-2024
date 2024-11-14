@@ -16,6 +16,11 @@ export default defineComponent({
       childMessage: 'Nic'
     }
   },
+  watch: {
+    childMessage(newValue, oldValue) {
+      console.log('Nova hodnota spravy je: ' + newValue + ' a stara hodnota spravy bola ' + oldValue)
+    }
+  },
   computed: {
     changeColor() {
       if(this.cislo < 5) {
