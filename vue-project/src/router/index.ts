@@ -31,7 +31,7 @@ const router = createRouter({
       component: AComponent,
       children: [
         {
-          path: '/:username',
+          path: ':username',
           name: 'component-username',
           component: BComponent,
           props: true
