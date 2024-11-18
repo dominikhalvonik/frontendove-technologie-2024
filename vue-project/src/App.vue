@@ -14,12 +14,19 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/our">Our</RouterLink>
+
+        <router-link v-for="id in [1,2,3]" :key="id"
+        :to="{ name: 'index',params: { id: id } }">
+        <h2>{{id}}</h2>
+      </router-link>
+
       </nav>
     </div>
   </header>
 
   <RouterView />
 </template>
+
 
 <style scoped>
 header {

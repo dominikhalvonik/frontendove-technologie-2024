@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import OurView from "@/views/OurView.vue";
 import AComponent from "@/components/AComponent.vue";
 import BComponent from "@/components/BComponent.vue";
+import IndexView from '../views/IndexView.vue';
+import ChildrenView from '@/views/ChildrenView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,11 +21,24 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
-    },
+    }, 
     {
       path: '/our',
       name: 'our',
       component: OurView
+    },
+    {
+      path: '/index/:id',
+      name: 'index',
+      component: IndexView,
+      props: true,
+      children: [
+        {
+        path: '/index/:id/info',
+        name: 'infoChildren',
+        component: ChildrenView,
+        props: true, }
+      ]
     },
     {
       path: '/a-component/:username',
