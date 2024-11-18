@@ -8,7 +8,7 @@ export default defineComponent({
 
 <template>
   <div>
-    Toto je obsah komponentu A: {{ this.$route.params.username }}
+    Tu je komponent A
   </div>
 </template>
 

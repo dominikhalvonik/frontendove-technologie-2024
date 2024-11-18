@@ -25,6 +25,9 @@ export default defineComponent({
     },
     handleChildEvent(message: any) {
       this.childMessage = message
+    },
+    goToHome() {
+      this.$router.push('/')
     }
   },
   watch: {
@@ -57,6 +60,7 @@ export default defineComponent({
   <p :class="getColor">{{ fullName }}</p>
   <button @click="increment">Pridaj</button>
   <button @click="decrement">Uber</button>
+  <button @click="goToHome">Home</button>
 </div>
   <p v-if="cislo < 5">
     <NewComponent :parentMessage="parentMessage" @childEvent="handleChildEvent"/>

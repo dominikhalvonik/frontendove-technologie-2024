@@ -20,8 +20,8 @@ export default defineComponent({
 <template>
 
   <div>
-    <RouterLink :to="'/a-component/' + username">Component A</RouterLink>
-    <RouterLink :to="'/b-component/' + username">Component B</RouterLink>
+    <RouterLink to="/component">Component A</RouterLink>
+    <RouterLink :to="'/component/' + username">Component B</RouterLink>
     <CalcComponent/>
     <TestComponent/>
   </div>
