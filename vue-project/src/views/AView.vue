@@ -7,8 +7,11 @@ export default defineComponent({
 </script>
 
 <template>
-  <div style="color: green; font-size: 50px" >
-    {{ this.$route.params.username }}
+  <div>
+    Tu je komponent A
+    <div style="font-size: 50px">
+      <RouterView />
+    </div>
   </div>
 </template>
 
