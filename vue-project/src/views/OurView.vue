@@ -13,6 +13,11 @@ export default defineComponent({
     return {
       username: "Peto"
     }
+  },
+  methods: {
+    goHome() {
+      this.$router.push('/')
+    }
   }
 })
 </script>
@@ -21,6 +26,7 @@ export default defineComponent({
   <div>
     <RouterLink :to="'/a-component/' + username">A komponent</RouterLink>
     <RouterLink :to="'/b-component/' + username">B component</RouterLink>
+    <button @click="goHome">Home</button>
     <TestComponent/>
     <CalcComponent/>
   </div>
