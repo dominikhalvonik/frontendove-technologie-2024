@@ -2,13 +2,19 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "BView"
+  name: "BComponent",
+  props: {
+    username: {
+      type: String,
+      required: true
+    }
+  }
 })
 </script>
 
 <template>
   <p>
-    {{ this.$route.params.username }}
+    Toto je obsah komponentu B: {{ username }}
   </p>
 </template>
 

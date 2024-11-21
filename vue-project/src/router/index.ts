@@ -26,14 +26,17 @@ const router = createRouter({
       component: OurView
     },
     {
-      path: '/a-component/:username',
-      name: 'a-component',
-      component: AView
-    },
-    {
-      path: '/b-component/:username',
-      name: 'b-component',
-      component: BView
+      path: '/component',
+      name: 'component',
+      component: AView,
+      children: [
+        {
+          path: ':username',
+          name: 'component-username',
+          component: BView,
+          props: true
+        }
+      ]
     }
   ]
 })
