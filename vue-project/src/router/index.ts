@@ -5,6 +5,7 @@ import AComponent from "@/components/AComponent.vue";
 import BComponent from "@/components/BComponent.vue";
 import IndexView from '../views/IndexView.vue';
 import ChildrenView from '@/views/ChildrenView.vue';
+import CounterView from "@/views/CounterView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -49,6 +50,11 @@ const router = createRouter({
       path: '/b-component/:username',
       name: 'b-component',
       component: BComponent
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      component: CounterView
     },
   ]
 })
