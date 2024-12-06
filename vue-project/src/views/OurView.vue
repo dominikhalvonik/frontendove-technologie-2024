@@ -2,6 +2,7 @@
 import {defineComponent} from 'vue'
 import TestComponent from "@/components/TestComponent.vue";
 import CalcComponent from "@/components/CalcComponent.vue";
+import {useCounterStore} from "@/stores/counter";
 
 export default defineComponent({
   name: "OurView",
@@ -11,7 +12,8 @@ export default defineComponent({
   },
   data() {
     return {
-      username: "Martin"
+      username: "Martin",
+      counter: useCounterStore()
     }
   },
   methods: {
@@ -27,6 +29,7 @@ export default defineComponent({
     <RouterLink to="/component">Component A</RouterLink>
     <RouterLink :to="'/component/' + username">Component B</RouterLink>
     <button @click="goHome">Home</button>
+    {{ counter.count }}
     <TestComponent/>
     <CalcComponent/>
   </div>
