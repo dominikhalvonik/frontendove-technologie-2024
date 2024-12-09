@@ -4,6 +4,7 @@ import OurView from "@/views/OurView.vue";
 import AComponent from "@/components/AComponent.vue";
 import BComponent from "@/components/BComponent.vue";
 import CounterView from "@/views/CounterView.vue";
+import TodoView from '@/views/TodoView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,11 @@ const router = createRouter({
       path: '/counter',
       name: 'counter',
       component: CounterView
+    },
+    {
+      path: '/todo',
+      name: 'todo',
+      component: TodoView
     },
   ]
 })
