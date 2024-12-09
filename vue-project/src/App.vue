@@ -15,6 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/our">Our</RouterLink>
         <RouterLink to="/counter">Counter</RouterLink>
+        <RouterLink to="/todo">Todo</RouterLink>
 
         <router-link v-for="id in [1,2,3]" :key="id"
         :to="{ name: 'index',params: { id: id } }">
