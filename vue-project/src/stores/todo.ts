@@ -18,6 +18,8 @@ export const useTodoStore = defineStore({
                 const promises = [];
                 for (let id = 1; id <= count; id++) {
                     promises.push(axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`));
+                    //const response = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+                    //this.todos.push(response.data);
                 }
                 const responses = await Promise.all(promises);
                 this.todos = responses.map((res) => res.data); // Ulož všetky TODO
